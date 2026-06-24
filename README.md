@@ -80,7 +80,7 @@ python scripts/translate_story.py \
     --input Data/VIST/VIST_English_500.json \
     --output Data/VIST/ \
     --languages hi zh \
-    --model facebook/nllb-200
+    --model facebook/nllb-200-distilled-600M
 ```
 ---
 
@@ -88,18 +88,18 @@ python scripts/translate_story.py \
 
 Images are generated independently for each story scene using multilingual text-to-image models.
 
-### Models Evaluated
+### Models Used for Story Visualization
 
 * MuLan-SD1.5
 * MuLan-SD2.1
 * MuLan-SDXL
 
-### Run Image Generation
+### Run Story Visualization
 
 ```bash
-python scripts/generate_images.py \
-    --input data/vist/multilingual.json \
-    --output outputs/images/ \
+python Scripts/story_visualization.py \
+    --input Data/VIST/VIST_English_500.json \
+    --output Images/ \
     --model mulan-sdxl \
     --steps 50 \
     --guidance 7.5
@@ -109,43 +109,9 @@ python scripts/generate_images.py \
 
 ---
 
-## 📊 Progressive Cultural Evaluation
-
-We propose a three-level evaluation framework that progressively increases cultural guidance.
-
-### Level 1: Basic Cultural Criteria (C)
-
-Evaluates Cultural Appropriateness based on the basic cultural criteria derived directly from the story context.
-
-### Level 2: Cultural Dimension Guidance 
-
-- Basic Cultural Criteria (C) + Focus Points (F)
-
-Introduces a specific cultural dimension to pay attention to with basic cultural criteria during the evaluation.
-
-* Background Objects
-* Facial Features
-* Infrastructure
-* Apparel
-
-### Level 3: Cultural Examples Grounding
-
-- Basic Cultural Criteria (C) + Focus Points (F) +  Illustrative Examples (E) 
-
-It provides concrete examples for each focus point to guide consistent and precise assessment.
-
-- Background Objects: Assess whether the depicted objects represent the target culture setting described in the scenes, focusing on nearby objects, furniture, decorations and other contextual details.
-
-– Facial Features: Evaluate whether the facial structures align with the diverse traits commonly found in the target culture. Avoid assumptions about stereotypical features.
-
-– Infrastructures: Consider whether the settings, such as architectural elements, are appropriate for the target culture.
-
-– Apparel: Assess whether clothing aligns with traditional or contemporary styles representative of the appropriate culture.
-
-
 ## ⚖️ MLLM-as-Jury Evaluation
 
-Cultural fidelity is assessed using multiple multimodal judges:
+Cultural Appropriateness of the story is assessed using multiple multimodal judge models:
 
 * Gemini Pro
 * Qwen2.5-VL
@@ -157,7 +123,7 @@ Each judge produces a score:
 r₁, r₂, r₃ ∈ {1,2,3,4,5}
 ```
 
-The final score is computed as:
+The final score is computed with the aggregation function average:
 
 ```text
 R = (r₁ + r₂ + r₃) / 3
@@ -165,7 +131,18 @@ R = (r₁ + r₂ + r₃) / 3
 
 Using multiple judges helps reduce individual model bias and improve evaluation robustness.
 
-### Run Evaluation
+### Run Individul MLLM-as-Judge Evaluation
+
+```bash
+python scripts/evaluate.py \
+    --images outputs/images/ \
+    --stories data/vist/multilingual.json \
+    --level 3 \
+    --judges gemini qwen maya \
+    --output results/vist_scores.json
+```
+
+### Agreegate MLLM-as-Jury Evalaution 
 
 ```bash
 python scripts/evaluate.py \
