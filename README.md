@@ -36,20 +36,19 @@ The proposed framework consists of three major stages:
 ## 🛠️ Project Structure
 
 ```text
-Eval_Multicultural_Story_Visualization/
+Cultural_Eval_For_StoryViz/
 ├── data/
 │   ├── vist/
 │   └── flintstones/
 ├── outputs/
 │   └── images/
-├── results/
 ├── scripts/
-│   ├── translate.py
-│   ├── generate_images.py
-│   ├── evaluate.py
+│   ├── translate_story.py
+│   ├── story_visualization.py
+│   ├── culture_evalaution_with_MLLM_as_Judge.py
+|   ├── culture_evaluation_with_MLLM_as_Jury.py
 ├── prompts/
-├── assets/
-│   └── framework.png
+├── framework.png
 └── README.md
 ```
 ---
@@ -61,14 +60,12 @@ We evaluate our framework on two benchmark story visualization datasets.
 ### 1. VIST (Visual Storytelling Dataset)
 
 * Real-world stories collected from Flickr albums
-* Approximately 50,000 stories
-* Rich cultural diversity and real-life scenarios
+* Rich cultural diversity and real-world scenarios
 
 ### 2. FlintstonesSV
 
-* Animated story visualization dataset based on *The Flintstones* american series
-* Approximately 24,000 image-caption pairs
-* Simplified and repetitive visual environments
+* Animated story visualization dataset based on *The Flintstones* American sitcom.
+* American culture and a simpler repetitive setting
 
 ---
 
@@ -79,9 +76,9 @@ English narratives are translated into Hindi and Chinese using the **NLLB-200** 
 ### Run Translation
 
 ```bash
-python scripts/translate.py \
-    --input data/vist/en_stories.json \
-    --output data/vist/multilingual.json \
+python scripts/translate_story.py \
+    --input Data/VIST/VIST_English_500.json \
+    --output Data/VIST/ \
     --languages hi zh \
     --model facebook/nllb-200
 ```
