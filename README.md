@@ -12,10 +12,6 @@ This repository introduces a **Progressive Cultural Evaluation Framework** for s
 
 ## 🧠 Framework Overview
 
-<p align="center">
-  <img src="assets/framework.png" width="900">
-</p>
-
 The proposed framework consists of three major stages:
 
 1. **Story Translation**
@@ -30,6 +26,10 @@ The proposed framework consists of three major stages:
 3. **Progressive Cultural Evaluation**
 
    * MLLM-as-Jury Culture Evaluation Framework
+   
+<p align="center">
+  <img src="framework.png" width="900">
+</p>
 
 ---
 
