@@ -188,16 +188,9 @@ If you find this work useful, please cite:
 
 ---
 
-## 🔗 Repository
-
-GitHub Repository:
-
-https://github.com/janak11111/Cultural_Eval_For_StoryViz
-
----
-
 ## 🙌 Acknowledgements
+This research work is funded by Research Ireland under Grant Number SFI/12/RC/2289_P2 (Insight), co-funded by the European Regional Development Fund.
 
-This work was conducted at the **Data Science Institute, University of Galway**.
+This work was conducted at the **Data Science Institute, University of Galway, Ireland.**
 
 We thank the open-source communities behind NLLB, MuLan, Gemini, Qwen-VL, and other foundational models that made this research possible.
