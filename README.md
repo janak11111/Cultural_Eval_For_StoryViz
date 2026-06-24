@@ -105,8 +105,7 @@ python Scripts/story_visualization.py \
     --guidance 7.5
 ```
 
-> Each scene is generated independently without temporal conditioning because of the lack of multilingual story visualization models.
-
+> Each scene was generated independently due to the unavailability of multilingual story visualization models, and our primary objective is to analyze culture rather than cross-scene consistency.
 ---
 
 ## ⚖️ MLLM-as-Jury Evaluation
