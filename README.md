@@ -100,7 +100,7 @@ Images are generated independently for each story scene using multilingual text-
 python Scripts/story_visualization.py \
     --input Data/VIST/VIST_English_500.json \
     --output Images/ \
-    --model mulan-sdxl \
+    --model sdxl \
     --steps 50 \
     --guidance 7.5
 ```
