@@ -107,12 +107,12 @@ python Scripts/story_visualization.py \
     --guidance 7.5
 ```
 
-> Each scene was generated independently due to the unavailability of multilingual story visualization models, and our primary objective is to analyze culture rather than cross-scene consistency.
+> Each scene is generated independently due to the unavailability of multilingual story visualization models. Our primary objective is to analyze cultural fidelity rather than cross-scene consistency.
 ---
 
 ## ⚖️ MLLM-as-Jury Evaluation
 
-Cultural Appropriateness of the story is assessed using multiple multimodal judge models:
+The cultural appropriateness of each story is assessed using multiple multimodal judge models:
 
 * Gemini Pro
 * Qwen2.5-VL
@@ -121,7 +121,7 @@ Cultural Appropriateness of the story is assessed using multiple multimodal judg
 Each judge produces a score:
 
 ```text
-r₁, r₂, r₃ ∈ {1,2,3,4,5}
+r₁, r₂, r₃ ∈ {1, 2, 3, 4, 5}
 ```
 
 The final score is computed with the aggregation function average:
@@ -130,9 +130,9 @@ The final score is computed with the aggregation function average:
 R = (r₁ + r₂ + r₃) / 3
 ```
 
-Using multiple judges helps reduce individual model bias and improve evaluation robustness.
+Using multiple judges helps reduce individual model bias and improves evaluation robustness.
 
-### Run Individul MLLM-as-Judge Evaluation
+### Run Individual MLLM-as-Judge Evaluation
 
 #### Gemini
 
@@ -191,7 +191,7 @@ python scripts/evaluate.py \
 
 The framework uses expert-role prompting to assess cultural appropriateness.
 
-Prompts are given in the folder `Prompts/` directory.
+Prompts are available in the folder `Prompts/` directory.
 
 --
 
@@ -211,7 +211,7 @@ If you find this work useful, please cite:
 ---
 
 ## 🙌 Acknowledgements
-This research work is funded by Research Ireland under Grant Number SFI/12/RC/2289_P2 (Insight), co-funded by the European Regional Development Fund.
+This research is funded by Research Ireland under Grant Number SFI/12/RC/2289_P2 (Insight), co-funded by the European Regional Development Fund.
 
 This work was conducted at the **Data Science Institute, University of Galway, Ireland.**
 
