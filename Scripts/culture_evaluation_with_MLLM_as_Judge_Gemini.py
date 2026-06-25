@@ -297,11 +297,8 @@ def evaluate(args):
             if sample_id in completed_ids:
                 continue
 
-            image_path = os.path.join(
-                args.image_dir,
-                f"{sample_id}_combine.png"
-            )
-
+            image_name = args.image_pattern.format(id=sample_id)
+            image_path = os.path.join(args.image_dir, image_name)
             if not os.path.exists(image_path):
 
                 print(
