@@ -45,7 +45,9 @@ Cultural_Eval_For_StoryViz/
 ├── scripts/
 │   ├── translate_story.py
 │   ├── story_visualization.py
-│   ├── culture_evalaution_with_MLLM_as_Judge.py
+│   ├── culture_evaluation_with_MLLM_as_Judge_Gemini.py
+│   ├── culture_evaluation_with_MLLM_as_Judge_Maya.py
+│   ├── culture_evaluation_with_MLLM_as_Judge_Qwen.py
 |   ├── culture_evaluation_with_MLLM_as_Jury.py
 ├── prompts/
 ├── framework.png
