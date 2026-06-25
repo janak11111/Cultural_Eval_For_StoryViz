@@ -162,17 +162,6 @@ Prompts are given in the folder /Prompts directory.
 
 --
 
-## 📈 Key Findings
-
-* ✅ MuLan-SDXL consistently achieves the highest cultural appropriateness scores.
-* ✅ Real-world stories (VIST) generally outperform animated stories (FlintstonesSV).
-* ✅ English narratives receive higher scores than Hindi and Chinese translations.
-* ✅ More detailed evaluation guidance leads to stricter and more discriminative scoring.
-* ⚠️ Generated outputs occasionally contain cultural inconsistencies and stereotypical representations.
-* ⚠️ Translation errors can propagate and negatively affect downstream visual generation quality.
-
----
-
 ## 📚 Citation
 
 If you find this work useful, please cite:
