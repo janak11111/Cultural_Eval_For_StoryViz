@@ -146,7 +146,9 @@ python Scripts/culture_evaluation_with_MLLM_as_Judge_Gemini.py \
     --output results/VIST/VIST_Gemini_English_Level3.jsonl
 ```
 
-#### Qwen3-VL
+#### Qwen2.5-VL-7B-Instruct
+
+> Set up the Qwen2.5-VL environment from Hugging Face (https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct) to run this script.
 
 ```bash
 python Scripts/culture_evaluation_with_MLLM_as_Judge_Qwen.py \
@@ -159,6 +161,8 @@ python Scripts/culture_evaluation_with_MLLM_as_Judge_Qwen.py \
 ```
 
 #### Maya
+
+> Set up the Maya model environment by cloning the Maya GitHub repository (https://github.com/nahidalam/maya) and then run this script.
 
 ```bash
 python Scripts/culture_evaluation_with_MLLM_as_Judge_Maya.py \
