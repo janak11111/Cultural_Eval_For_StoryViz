@@ -132,13 +132,40 @@ Using multiple judges helps reduce individual model bias and improve evaluation 
 
 ### Run Individul MLLM-as-Judge Evaluation
 
+#### Gemini
+
 ```bash
-python scripts/evaluate.py \
-    --images outputs/images/ \
-    --stories data/vist/multilingual.json \
+python Scripts/culture_evaluation_with_MLLM_as_Judge_Gemini.py \
+    --dataset VIST \
+    --language English \
     --level 3 \
-    --judges gemini qwen maya \
-    --output results/vist_scores.json
+    --image_dir Outputs/VIST/images_english \
+    --story_file Data/VIST/VIST_English_500.json \
+    --output results/VIST/VIST_Gemini_English_Level3.jsonl
+```
+
+#### Qwen3-VL
+
+```bash
+python Scripts/culture_evaluation_with_MLLM_as_Judge_Qwen.py \
+    --dataset FlintstonesSV \
+    --language Chinese \
+    --level 2 \
+    --image_dir Outputs/FlintstonesSV/images_chinese \
+    --story_file Data/FlintstonesSV/FlintstonesSV_Chinese_500.json \
+    --output results/FlintstonesSV/FlintstonesSV_Gemini_Chinese_Level2.jsonl
+```
+
+#### Maya
+
+```bash
+python Scripts/culture_evaluation_with_MLLM_as_Judge_Maya.py \
+    --dataset VIST \
+    --language Hindi \
+    --level 1 \
+    --image_dir Outputs/VIST/images_hindi \
+    --story_file Data/VIST/VIST_Hindi_500.json \
+    --output results/VIST/VIST_Gemini_Hindi_Level1.jsonl
 ```
 
 ### Agreegate MLLM-as-Jury Evalaution 
