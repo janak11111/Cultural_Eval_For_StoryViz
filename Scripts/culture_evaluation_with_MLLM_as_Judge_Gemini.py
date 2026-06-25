@@ -71,7 +71,7 @@ Follow the below given format to return Rating.
 
 single rating number (5, 4, 3, 2, or 1) enclosed in parentheses.
 
-Reasoning:
+Reasoning:"""
 
     prompt_v2 = f"""
 You are an expert in evaluating Cultural Appropriateness across different Languages and Cultures.
@@ -111,7 +111,7 @@ Follow the below given format to return Rating.
 
 single rating number (5, 4, 3, 2, or 1) enclosed in parentheses.
 
-Reasoning:
+Reasoning:"""
 
     prompt_v3 = f"""
 You are an expert in evaluating Cultural Appropriateness across different Languages and Cultures.
@@ -156,7 +156,7 @@ Follow the below given format to return Rating.
 
 single rating number (5, 4, 3, 2, or 1) enclosed in parentheses.
 
-Reasoning:
+Reasoning:"""
 
     prompts = {
         1: prompt_v1,
