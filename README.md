@@ -158,7 +158,7 @@ python scripts/evaluate.py \
 
 The framework uses expert-role prompting to assess cultural appropriateness.
 
-Prompts are given in the folder /Prompts directory.
+Prompts are given in the folder `Prompts/` directory.
 
 --
 
