@@ -180,7 +180,7 @@ python Scripts/culture_evaluation_with_MLLM_as_Judge_Maya.py \
 ```bash
 python scripts/culture_evaluation_with_MLLM_as_Jury.py \
     --dataset VIST
-    --images outputs/Generated_Images/VIST \
+    --language English \
     --judge_predictions_folder Outputs/Predictions/ \
     --level 3 \
     --judges gemini qwen maya \
