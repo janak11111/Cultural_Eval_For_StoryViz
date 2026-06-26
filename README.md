@@ -102,7 +102,7 @@ Images are generated independently for each story scene using multilingual text-
 ```bash
 python Scripts/story_visualization.py \
     --input Data/VIST/VIST_English_500.json \
-    --output Images/ \
+    --output Outputs/Generated_Image/SDXL/ \
     --model sdxl \
     --steps 50 \
     --guidance 7.5
@@ -142,9 +142,9 @@ python Scripts/culture_evaluation_with_MLLM_as_Judge_Gemini.py \
     --dataset VIST \
     --language English \
     --level 3 \
-    --image_dir Outputs/VIST/images_english \
+    --image_dir Outputs/Genrated_Images/VIST/SDXL_english \
     --story_file Data/VIST/VIST_English_500.json \
-    --output results/VIST/VIST_Gemini_English_Level3.jsonl
+    --output Outputs/predictions/VIST/VIST_Gemini_English_Level3.jsonl
 ```
 
 #### Qwen2.5-VL-7B-Instruct
@@ -156,9 +156,9 @@ python Scripts/culture_evaluation_with_MLLM_as_Judge_Qwen.py \
     --dataset FlintstonesSV \
     --language Chinese \
     --level 2 \
-    --image_dir Outputs/FlintstonesSV/images_chinese \
+    --image_dir Outputs/Generated_Images/FlintstonesSV/images_chinese \
     --story_file Data/FlintstonesSV/FlintstonesSV_Chinese_500.json \
-    --output results/FlintstonesSV/FlintstonesSV_Gemini_Chinese_Level2.jsonl
+    --output Outputs/predictions/FlintstonesSV/FlintstonesSV_Gemini_Chinese_Level2.jsonl
 ```
 
 #### Maya
@@ -170,20 +170,21 @@ python Scripts/culture_evaluation_with_MLLM_as_Judge_Maya.py \
     --dataset VIST \
     --language Hindi \
     --level 1 \
-    --image_dir Outputs/VIST/images_hindi \
+    --image_dir Outputs/Generated_Images/VIST/images_hindi \
     --story_file Data/VIST/VIST_Hindi_500.json \
-    --output results/VIST/VIST_Gemini_Hindi_Level1.jsonl
+    --output Outputs/predictions/VIST/VIST_Gemini_Hindi_Level1.jsonl
 ```
 
 ### Agreegate MLLM-as-Jury Evalaution 
 
 ```bash
-python scripts/evaluate.py \
-    --images outputs/images/ \
-    --stories data/vist/multilingual.json \
+python scripts/culture_evaluation_with_MLLM_as_Jury.py \
+    --dataset VIST
+    --images outputs/Generated_Images/VIST \
+    --judge_predictions_folder Outputs/Predictions/ \
     --level 3 \
     --judges gemini qwen maya \
-    --output results/vist_scores.json
+    --output Outputs/results/VIST_MLLM_as_Jury_Culture_Scores.json
 ```
 
 #### output
