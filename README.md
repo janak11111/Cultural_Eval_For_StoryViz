@@ -37,19 +37,20 @@ The proposed framework consists of three major stages:
 
 ```text
 Cultural_Eval_For_StoryViz/
-├── data/
-│   ├── vist/
-│   └── flintstones/
+├── Data/
+│   ├── VISTist/
+│   └── FlintstonesSV/
 ├── outputs/
-│   └── images/
-├── scripts/
+|   ├── Generated_Images/
+│   └── Predictions/
+├── Scripts/
 │   ├── translate_story.py
 │   ├── story_visualization.py
 │   ├── culture_evaluation_with_MLLM_as_Judge_Gemini.py
 │   ├── culture_evaluation_with_MLLM_as_Judge_Maya.py
 │   ├── culture_evaluation_with_MLLM_as_Judge_Qwen.py
 |   ├── culture_evaluation_with_MLLM_as_Jury.py
-├── prompts/
+├── Prompts/
 ├── framework.png
 └── README.md
 ```
