@@ -69,6 +69,7 @@ We evaluate our framework on two benchmark story visualization datasets.
 * Animated story visualization dataset based on *The Flintstones* American sitcom.
 * American culture and a simpler repetitive setting
 
+> Download both datasets from the ARLDM Github Repo (https://github.com/xichenpan/ARLDM). For this work, you can start with the 500 samples given in `/Data` directory.
 ---
 
 ## 🌍 Story Translation
@@ -183,6 +184,13 @@ python scripts/evaluate.py \
     --level 3 \
     --judges gemini qwen maya \
     --output results/vist_scores.json
+```
+
+#### output
+```
+{"id": 563434, "jury_rating": 4.67}
+{"id": 212134, "jury_rating": 3.33}
+{"id": 534342, "jury_rating": 2.77}
 ```
 
 ---
